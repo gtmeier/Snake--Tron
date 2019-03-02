@@ -1,0 +1,40 @@
+GameView:
+    creates the window
+    creates the game and game board
+    should allow for the user to choose the Agent type for each player
+    contains while loop for game
+    has game move next step
+    checks for win/loss
+    updates game board
+
+Game:
+    holds a game board
+    holds the two player agents
+    function to move game forward one step
+    each step
+        gets a move from each agent (UP, DOWN, LEFT, RIGHT)
+        sends the moves to the game board
+
+GameBoard:
+    holds a grid of the board
+    holds a snake for each player
+    function get_own_snake(player_number)
+    function get_opponent_snake(player_number)
+    each move
+        updates snakes movements
+        checks for collision with food, walls, self, and other snake
+        removes eaten food and adds length to snake
+
+Snake:
+    Holds the values of each snake segment
+    Takes a direction and moves the snake
+
+Agent
+    Base class that has virtual function get_move(game_board)
+    Human:
+        holds a reference to the window to get the key events
+        returns the key event for each move
+    Heuristic:
+        returns the estimated best move
+    Random:
+        returns a random move because why not
